@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/symposium.sh hook pre-tool-use"
+            "command": "${CLAUDE_PLUGIN_ROOT}/skills/rust/scripts/symposium.sh hook pre-tool-use"
           }
         ]
       }
@@ -17,7 +17,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/symposium.sh hook post-tool-use"
+            "command": "${CLAUDE_PLUGIN_ROOT}/skills/rust/scripts/symposium.sh hook post-tool-use"
           }
         ]
       }
@@ -28,7 +28,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/symposium.sh hook user-prompt-submit"
+            "command": "${CLAUDE_PLUGIN_ROOT}/skills/rust/scripts/symposium.sh hook user-prompt-submit"
           }
         ]
       }

@@ -1,6 +1,6 @@
 ---
 name: symposium-rust
-description: **Critical:** Invoke `symposium start` before authoring Rust code.
+description: **Critical:** Use this skill before authoring Rust code or answering questions about Rust crates.
 ---
 
 # Symposium — Rust Development Guidance
