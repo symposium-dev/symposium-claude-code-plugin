@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Symposium — AI the Rust Way</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            *,
+            *::before,
+            *::after {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            body {
+                font-family: "Lato", sans-serif;
+                color: #372b2f;
+                background: #fafafa;
+                line-height: 1.6;
+            }
+
+            h1,
+            h2,
+            h3 {
+                font-family: "Poppins", sans-serif;
+                font-weight: 600;
+            }
+
+            a {
+                color: #372b2f;
+            }
+            a:hover {
+                color: #faca2a;
+            }
+
+            .hero {
+                text-align: center;
+                padding: 4rem 1rem 3rem;
+            }
+
+            .hero img {
+                max-width: 320px;
+                width: 100%;
+            }
+
+            .hero-subtitle {
+                font-family: "Poppins", sans-serif;
+                font-size: 1.8rem;
+                font-weight: 700;
+                letter-spacing: 0.2em;
+                text-transform: uppercase;
+                text-decoration: underline;
+                text-underline-offset: 0.3em;
+                color: #666;
+                margin: 1rem 0 2rem;
+            }
+
+            .hero-actions {
+                display: flex;
+                justify-content: center;
+                gap: 1.5rem;
+                flex-wrap: wrap;
+            }
+
+            .download-btn {
+                display: inline-block;
+                font-family: "Poppins", sans-serif;
+                font-size: 1.1rem;
+                font-weight: 600;
+                color: #fff;
+                background: #372b2f;
+                padding: 0.8rem 2rem;
+                border-radius: 6px;
+                text-decoration: none;
+                transition: background 0.2s;
+            }
+
+            .download-btn:hover {
+                background: #faca2a;
+                color: #372b2f;
+            }
+
+            .container {
+                max-width: 700px;
+                margin: 0 auto;
+                padding: 0 1.5rem 4rem;
+            }
+
+            section {
+                margin-bottom: 2.5rem;
+            }
+
+            section h2 {
+                font-size: 1.4rem;
+                margin-bottom: 0.75rem;
+                border-bottom: 2px solid #faca2a;
+                padding-bottom: 0.25rem;
+            }
+
+            pre {
+                background: #2d2d2d;
+                color: #f8f8f2;
+                padding: 1rem 1.25rem;
+                border-radius: 6px;
+                overflow-x: auto;
+                font-size: 0.9rem;
+                line-height: 1.5;
+                margin: 0.75rem 0;
+            }
+
+            code {
+                font-family: "Source Code Pro", "Menlo", monospace;
+            }
+
+            p code,
+            li code {
+                background: #eee;
+                padding: 0.15em 0.4em;
+                border-radius: 3px;
+                font-size: 0.9em;
+            }
+
+            ul,
+            ol {
+                padding-left: 1.5rem;
+            }
+            li {
+                margin-bottom: 0.4rem;
+            }
+
+            .method {
+                padding: 1.25rem;
+                border: 1px solid #e0e0e0;
+                border-radius: 8px;
+                background: #fff;
+                margin-bottom: 1rem;
+            }
+
+            .method.primary {
+                border-left: 4px solid #faca2a;
+            }
+
+            .method.primary.flash {
+                animation: highlight-flash 1s ease;
+            }
+
+            @keyframes highlight-flash {
+                0% {
+                    background: #fff;
+                }
+                30% {
+                    background: #fef9e7;
+                }
+                100% {
+                    background: #fff;
+                }
+            }
+
+            .method h3 {
+                margin-bottom: 0.5rem;
+                font-size: 1.1rem;
+            }
+
+            .method p {
+                margin-bottom: 0.5rem;
+            }
+
+            .method.other {
+                background: #f3f3f3;
+                border-color: #ddd;
+                color: #999;
+            }
+
+            .method.other h3 {
+                color: #999;
+            }
+
+            .method.other a {
+                color: #777;
+            }
+
+            .method.other pre {
+                background: #bbb;
+                color: #eee;
+            }
+
+            .method.other code {
+                color: #eee;
+            }
+
+            .method.other p code {
+                background: #ddd;
+                color: #888;
+            }
+
+            footer {
+                text-align: center;
+                padding: 2rem 1rem;
+                color: #999;
+                font-size: 0.85rem;
+                border-top: 1px solid #e0e0e0;
+            }
+
+            footer a {
+                color: #666;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="hero">
+            <img src="logo.png" alt="Symposium" />
+            <div class="hero-subtitle">AI the Rust Way</div>
+            <div class="hero-actions">
+                <a href="#plugin" class="download-btn"
+                    >Install Claude Code Plugin</a
+                >
+                <a href="#skill" class="download-btn"
+                    >Install Standalone Skill</a
+                >
+            </div>
+        </div>
+
+        <div class="container">
+            <section>
+                <h2>What is this page?</h2>
+                <p>
+                    This is the homepage for the Symposium Claude Code Plugin
+                    and Skill download. For the full Symposium documentation,
+                    visit <a href="https://symposium.dev">symposium.dev</a>.
+                </p>
+            </section>
+
+            <section>
+                <h2>What is Symposium?</h2>
+                <p>
+                    Symposium helps AI agents write better, more idiomatic Rust.
+                    It connects your agent with crate-specific guidance from
+                    crate authors, keeps it up to date with the latest Rust
+                    language features, and streamlines the cargo workflow to
+                    save tokens and time. Learn more at
+                    <a href="https://symposium.dev">symposium.dev</a>.
+                </p>
+            </section>
+
+            <section>
+                <h2 id="plugin">Claude Code Plugin</h2>
+                <div id="plugin-card" class="method primary">
+                    <p>
+                        The recommended way to use Symposium. The plugin
+                        installs hooks that automatically intercept cargo calls
+                        for better token usage, plus a
+                        <code>/symposium:rust</code> skill. Add the Symposium
+                        marketplace and install:
+                    </p>
+                    <pre><code>claude plugin marketplace add symposium-dev/symposium-claude-code-plugin
+claude plugin install symposium@symposium</code></pre>
+                    <p>
+                        The skill is automatically invoked when you work with
+                        Rust code, but you can always trigger it manually.
+                    </p>
+                </div>
+            </section>
+
+            <section>
+                <h2 id="skill">Standalone Skill</h2>
+                <div id="skill-card" class="method primary">
+                    <p>
+                        If you prefer not to use the full plugin, you can
+                        install just the Symposium skill. Download the zip and
+                        unzip it into the appropriate skills directory for your
+                        agent (e.g., <code>.claude/skills/</code> for Claude
+                        Code):
+                    </p>
+                    <pre><code>curl -LO https://symposium-dev.github.io/symposium-claude-code-plugin/symposium-skill.zip
+unzip symposium-skill.zip -d .claude/skills/</code></pre>
+                    <p>
+                        The skill will be automatically invoked when you work
+                        with Rust code. Workflow improvements (cargo filtering,
+                        auto-rustfmt) are best-effort without the plugin hooks.
+                    </p>
+                    <p>You can download the skill zip directly here:</p>
+                    <p>
+                        <a
+                            href="symposium-skill.zip"
+                            class="download-btn"
+                            style="font-size: 0.9rem; padding: 0.5rem 1.5rem"
+                            >Download Skill (.zip)</a
+                        >
+                    </p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Other ways to use Symposium</h2>
+                <p>
+                    Symposium can also be used as an MCP server or standalone
+                    CLI tool. See the
+                    <a href="https://symposium.dev/install.html"
+                        >install page on symposium.dev</a
+                    >
+                    for details.
+                </p>
+            </section>
+
+            <section>
+                <h2>For crate authors</h2>
+                <p>
+                    Maintain a Rust crate? Publish skills so every AI-assisted
+                    user of your library gets your best practices built in. See
+                    <a
+                        href="https://symposium.dev/crate-authors/supporting-your-crate.html"
+                        >Supporting your crate</a
+                    >
+                    on symposium.dev for details.
+                </p>
+            </section>
+        </div>
+
+        <footer>
+            <a href="https://github.com/symposium-dev/symposium">GitHub</a>
+            &middot;
+            <a
+                href="https://github.com/symposium-dev/symposium-claude-code-plugin"
+                >Plugin source</a
+            >
+        </footer>
+
+        <script>
+            function flashCard(linkSelector, cardId) {
+                document
+                    .querySelector(linkSelector)
+                    .addEventListener("click", function () {
+                        var card = document.getElementById(cardId);
+                        card.classList.remove("flash");
+                        void card.offsetWidth;
+                        card.classList.add("flash");
+                    });
+            }
+            flashCard('a[href="#plugin"]', "plugin-card");
+            flashCard('a[href="#skill"]', "skill-card");
+        </script>
+    </body>
+</html>

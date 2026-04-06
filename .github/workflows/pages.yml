@@ -1,0 +1,48 @@
+name: Deploy site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build skill zip
+        run: |
+          mkdir -p _site
+          # Create the zip with symposium/ as the top-level directory
+          mkdir -p _build/symposium/scripts
+          cp skills/rust/SKILL.md _build/symposium/SKILL.md
+          cp skills/rust/scripts/symposium.sh _build/symposium/scripts/symposium.sh
+          cd _build
+          zip -r ../_site/symposium-skill.zip symposium/
+
+      - name: Build site
+        run: |
+          cp site/index.html _site/index.html
+          cp site/logo.png _site/logo.png
+
+      - uses: actions/upload-pages-artifact@v3
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4
