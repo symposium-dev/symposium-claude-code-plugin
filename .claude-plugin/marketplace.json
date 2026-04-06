@@ -9,7 +9,7 @@
   "plugins": [
     {
       "name": "symposium",
-      "source": ".",
+      "source": "./",
       "description": "AI the Rust Way — helps your agent write better, more idiomatic Rust",
       "version": "0.1.0"
     }
